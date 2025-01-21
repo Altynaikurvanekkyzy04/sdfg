@@ -26,28 +26,36 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void calculate() {
     final num1 = double.tryParse(num1Controller.text) ?? 0; 
-
-    if (num1 < 1) {
+if (num1 < 1) {
       setState(() {
-        result = "Введите корректный этаж (>= 1)"; 
+        result = "Введите корректный этаж";
       });
     } else if (num1 == 1) {
       setState(() {
-        result = "0 сом (1 этаж бесплатно)"; 
+        result = "0 сом (1 этаж бесплатно)";
+      });
+    } else if (num1 <= 3) {
+      final cost = (num1 - 1) * 20;
+      setState(() {
+        result = "$cost сомов";
+      });
+    } else if (num1 <= 8) {
+      final cost = (3 * 20) + ((num1 - 3) * 30);
+      setState(() {
+        result = "$cost сомов";
       });
     } else {
-      final cost = (num1 - 1) * 20; 
+      final cost = (3 * 20) + (4 * 30) + ((num1 - 8) * 50);
       setState(() {
-        result = "$cost сомов"; 
+        result = "$cost сомов";
       });
     }
   }
 
-
   void _clear() {
     setState(() {
       num1Controller.clear();
-      result = ""; 
+      result = "";
     });
   }
 
