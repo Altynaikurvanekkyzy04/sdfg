@@ -39,13 +39,13 @@ if (num1 < 1) {
       setState(() {
         result = "$cost сомов";
       });
-    } else if (num1 <= 8) {
-      final cost = (3 * 20) + ((num1 - 3) * 30);
+    } else if (num1 <= 7) {
+      final cost = (3 * 20) + ((num1 - 4) * 30);
       setState(() {
         result = "$cost сомов";
       });
     } else {
-      final cost = (3 * 20) + (4 * 30) + ((num1 - 8) * 50);
+      final cost = (4 * 20) + (5 * 30) + ((num1 - 9) * 40);
       setState(() {
         result = "$cost сомов";
       });
